@@ -1,27 +1,48 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {Component} from 'react';
+import {Route} from 'react-router-dom';
+import {createMuiTheme,MuiThemeProvider} from '@material-ui/core/styles';
+import MainSearchPage from '../containers/MainSearchPage';
+import PopularMovies from '../containers/PopularMovies';
+import BestMovies from '../containers/BestMovies';
+import NewMovieReleases from '../containers/NewMovieReleases';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#a1887f',
+            light: '#d7ccc8',
+            dark: '#795548',
+            contrastText: '#000000',
+        },
+    },
+
+    typography: {
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
+    },
+});
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <MuiThemeProvider theme={theme}>
+                <Route path="/" exact component={MainSearchPage}/>
+                <Route path="/popularmovies" component={PopularMovies}/>
+                <Route path="/bestmovies" component={BestMovies}/>
+                <Route path="/newmoviereleases" component={NewMovieReleases}/>
+            </MuiThemeProvider>
+        );
+    }
 }
 
 export default App;

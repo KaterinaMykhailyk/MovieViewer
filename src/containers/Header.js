@@ -1,20 +1,17 @@
 import React from 'react';
-import {Paper, Tabs, Tab} from '@material-ui/core';
-import {Link} from 'react-router-dom';
-
+import {AppBar, Toolbar} from '@material-ui/core';
+import MovieSearchBar from './MovieSearchBar';
+import MovieTabBar from './MovieTabBar';
 
 const Header = () => {
-    return <Paper>
-        <Tabs
-            value={0}
-            indicatorColor="primary"
-            textColor="primary"
-            centered>
-            <Tab label="Popular Movies" />
-            <Tab label="Best Movies"/>
-            <Tab label="New Movie Releases"/>
-        </Tabs>
-    </Paper>
+    return (
+        <AppBar>
+            <Toolbar>
+                <MovieSearchBar/>
+                <MovieTabBar/>
+            </Toolbar>
+        </AppBar>
+    )
 };
 
 export default Header;

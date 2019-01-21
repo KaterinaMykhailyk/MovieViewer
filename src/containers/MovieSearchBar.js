@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Search from '../components/Search';
 
-class MovieSearch extends Component {
+class MovieSearchBar extends Component {
     render () {
         return (
                 <Search />
@@ -9,4 +9,4 @@ class MovieSearch extends Component {
     }
 }
 
-export default MovieSearch;
+export default MovieSearchBar;
