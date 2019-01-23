@@ -10,7 +10,7 @@ function searchMovies(query) {
             query
         }
     })
-        .then(response => console.log(response.data));
+        .then(response => response.json());
 }
 
 function fetchPopularMovies () {
