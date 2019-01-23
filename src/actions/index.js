@@ -1,4 +1,4 @@
-import {SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS} from '../constants/index.js';
+import {SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES} from '../constants/index.js';
 import {searchMovies} from '../api/index.js';
 
 export const fetchMoviesIfNeeded = query => (dispatch, getState) => {
@@ -42,7 +42,10 @@ export const searchMoviesSuccess = (query, json) => {
     }
 };
 
-
+export const invalidateMovies = query => ({
+    type: INVALIDATE_MOVIES,
+    query
+});
 
 
 
