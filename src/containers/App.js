@@ -36,7 +36,7 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider theme={theme}>
-                <Route path="/" exact component={MainSearchPage}/>
+                <Route path="/" component={MainSearchPage}/>
                 <Route path="/popularmovies" component={PopularMovies}/>
                 <Route path="/bestmovies" component={BestMovies}/>
                 <Route path="/newmoviereleases" component={NewMovieReleases}/>

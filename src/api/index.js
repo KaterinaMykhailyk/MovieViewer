@@ -10,10 +10,9 @@ function searchMovies(query) {
             query
         }
     })
-        .then(response => response.json());
 }
 
-function fetchPopularMovies () {
+function fetchPopularMovies() {
     return axios.get(`${API_PREFIX}movie/popular`, {
         params: {
             api_key: API_KEY,
@@ -46,7 +45,7 @@ function fetchMovie(id) {
             api_key: API_KEY
         }
     })
-        .then(response => console.log (response.data));
+        .then(response => console.log(response.data));
 }
 
 export {

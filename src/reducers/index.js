@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import {INVALIDATE_MOVIES, SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS} from "../constants";
 
-const moviesByQuery = (state = { }, action) => {
+const moviesByQuery = (state = {}, action) => {
     switch (action.type) {
         case INVALIDATE_MOVIES:
         case SEARCH_MOVIES_REQUEST:
@@ -37,7 +37,7 @@ const movies = (state = {
                 ...state,
                 isFetching: false,
                 didInvalidate: false,
-                items: action.query,
+                items: action.movies,
                 lastUpdated: action.receivedAt
             };
         default:

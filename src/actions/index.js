@@ -1,5 +1,5 @@
-import {SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES} from '../constants/index.js';
-import {searchMovies} from '../api/index.js';
+import { SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES } from '../constants/index.js';
+import { searchMovies } from '../api/index.js';
 
 export const fetchMoviesIfNeeded = query => (dispatch, getState) => {
     if (shouldFetchMovies(getState(), query)) {
@@ -23,7 +23,7 @@ export const fetchMovies = query => dispatch => {
     dispatch(searchMoviesRequest(query));
 
     return searchMovies(query)
-        .then(json => dispatch(searchMoviesSuccess(query, json)));
+        .then(data => dispatch(searchMoviesSuccess(query, data)));
 };
 
 export const searchMoviesRequest = (query) => {
@@ -34,10 +34,11 @@ export const searchMoviesRequest = (query) => {
 };
 
 export const searchMoviesSuccess = (query, json) => {
+    console.log (query, json);
     return {
         type: SEARCH_MOVIES_SUCCESS,
         query,
-        movies: json.data.children.map(child => child.data),
+        movies: json.data.results.map(result => result),
         receivedAt: Date.now()
     }
 };
