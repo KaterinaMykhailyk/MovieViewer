@@ -9,7 +9,6 @@ const Search = (props) => {
                 <SearchIcon />
             </IconButton>
             <InputBase
-                autoCopmolete="true"
                 placeholder="Search movies"
                 onChange={props.onChange}
                 value={props.value}

@@ -17,14 +17,14 @@ class MovieSearchBar extends Component {
     }
 
     componentDidMount() {
-        if (this.props.history.location.search) {
-            this.props.onFetchMoviesIfNeeded(this.props.history.location.search);
+        if (this.props.location.search) {
+            this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(8));
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.history.location.search !== prevProps.location.search) {
-            this.props.onFetchMoviesIfNeeded(this.props.history.location.search);
+        if (this.props.location.search !== prevProps.location.search) {
+            this.props.onFetchMoviesIfNeeded(this.state.searchFieldValue);
         }
     }
 
@@ -36,16 +36,11 @@ class MovieSearchBar extends Component {
 
     handleClick() {
         const {history} = this.props;
-
-        history.push({
-            pathname: "/movies",
-            search: this.state.searchFieldValue,
-        });
-
-        /* this.setState({
-            searchFieldValue: ""
-        });
-     */
+        const location = {
+            pathname: '/movies',
+            search: `?search=${this.state.searchFieldValue}`
+        };
+        history.push(location);
     }
 
     render() {

@@ -1,5 +1,16 @@
-import { SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES } from '../constants/index.js';
+import { SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES, SHOW_MOVIES } from '../constants/index.js';
 import { searchMovies } from '../api/index.js';
+
+// AC for movies currently in search
+
+ export function showMovies (movie) {
+    return {
+        type: SHOW_MOVIES,
+        movie
+    }
+}
+
+// AC for API requests
 
 export const fetchMoviesIfNeeded = query => (dispatch, getState) => {
     if (shouldFetchMovies(getState(), query)) {
@@ -21,6 +32,7 @@ export const shouldFetchMovies = (state, query) => {
 export const fetchMovies = query => dispatch => {
 
     dispatch(searchMoviesRequest(query));
+    dispatch(showMovies(query));
 
     return searchMovies(query)
         .then(data => dispatch(searchMoviesSuccess(query, data)));
@@ -34,7 +46,6 @@ export const searchMoviesRequest = (query) => {
 };
 
 export const searchMoviesSuccess = (query, json) => {
-    console.log (query, json);
     return {
         type: SEARCH_MOVIES_SUCCESS,
         query,
