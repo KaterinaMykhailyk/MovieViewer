@@ -1,17 +1,22 @@
 import React, {Component, Fragment} from 'react';
 import MovieItem from '../components/MovieItem';
+import Loader from '../components/Loader';
 import {connect} from 'react-redux';
 
 class MovieList extends Component {
     render() {
-        const {movies} = this.props;
-        console.log(this.props);
+        const {movies, isFetching} = this.props;
+
         return (
-            <Fragment>
+
+        <Fragment>
+            { isFetching ? <Loader /> :
                 <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around", marginTop: "80px"}}>
                     {movies.map((movie) => <MovieItem movie={movie} key={movie.id}/>)}
                 </div>
-            </Fragment>
+            }
+        </Fragment>
+
         )
     }
 }
