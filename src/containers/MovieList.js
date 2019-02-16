@@ -8,7 +8,6 @@ class MovieList extends Component {
         const {movies, isFetching} = this.props;
 
         return (
-
         <Fragment>
             { isFetching ? <Loader /> :
                 <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around", marginTop: "80px"}}>
@@ -16,7 +15,6 @@ class MovieList extends Component {
                 </div>
             }
         </Fragment>
-
         )
     }
 }

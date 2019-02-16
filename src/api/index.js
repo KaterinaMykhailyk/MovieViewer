@@ -39,7 +39,7 @@ function fetchNowPlayingMovies() {
         .then(response => console.log(response.data));
 }
 
-function fetchMovie(id) {
+function getMovie(id) {
     return axios.get(`${API_PREFIX}movie/${id}`, {
         params: {
             api_key: API_KEY
@@ -53,5 +53,5 @@ export {
     fetchPopularMovies,
     fetchTopRatedMovies,
     fetchNowPlayingMovies,
-    fetchMovie
+    getMovie
 };

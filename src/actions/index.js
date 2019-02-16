@@ -1,5 +1,5 @@
-import { SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES, SHOW_MOVIES } from '../constants/index.js';
-import { searchMovies } from '../api/index.js';
+import { SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, INVALIDATE_MOVIES, SHOW_MOVIES, FETCH_MOVIE_REQUEST,FETCH_MOVIE_SUCCESS } from '../constants/index.js';
+import { searchMovies, getMovie } from '../api/index.js';
 
 // AC for movies currently in search
 
@@ -38,7 +38,7 @@ export const fetchMovies = query => dispatch => {
         .then(data => dispatch(searchMoviesSuccess(query, data)));
 };
 
-export const searchMoviesRequest = (query) => {
+export const searchMoviesRequest = query => {
     return {
         type: SEARCH_MOVIES_REQUEST,
         query
@@ -58,6 +58,32 @@ export const invalidateMovies = query => ({
     type: INVALIDATE_MOVIES,
     query
 });
+
+// AC for individual movie by ID
+
+export const fetchMovie = id => dispatch => {
+
+    dispatch(fetchMovieRequest(id));
+
+    return getMovie(id)
+        .then(data => dispatch(fetchMovieSuccess(id, data)));
+};
+
+export const fetchMovieRequest = id => {
+    return {
+        type: FETCH_MOVIE_REQUEST,
+        id
+    }
+};
+
+export const fetchMovieSuccess = (id, json) => {
+    return {
+        type: FETCH_MOVIE_SUCCESS,
+        id,
+        movie: json.data,
+        receivedAt: Date.now()
+    }
+};
 
 
 

@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import {NavLink} from 'react-router-dom'
 
 const styles = {
     card: {
@@ -19,9 +20,7 @@ const styles = {
     media: {
         height: 200,
     },
-    body: {
-
-    }
+    body: {}
 };
 const MovieItem = (props) => {
     const {classes, movie} = props;
@@ -46,9 +45,11 @@ const MovieItem = (props) => {
 
             <Divider variant="fullWidth"/>
             <CardActions>
-                <Button size="small" color="primary">
-                    More Info
-                </Button>
+                <NavLink to={`/movies/${movie.id}`} style={{ textDecoration: 'none' }}>
+                    <Button size="small" color="primary">
+                        More Info
+                    </Button>
+                </NavLink>
             </CardActions>
 
         </CardActionArea>

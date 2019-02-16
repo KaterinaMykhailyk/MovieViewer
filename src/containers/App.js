@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
-import {createMuiTheme,MuiThemeProvider} from '@material-ui/core/styles';
-import MainSearchPage from '../containers/MainSearchPage';
+import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import Header from '../containers/Header';
 import PopularMovies from '../containers/PopularMovies';
 import BestMovies from '../containers/BestMovies';
 import NewMovieReleases from '../containers/NewMovieReleases';
+import AboutMovie from "../containers/AboutMovie";
+import MovieList from "../containers/MovieList";
 
 const theme = createMuiTheme({
     palette: {
@@ -36,7 +38,9 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider theme={theme}>
-                <Route path="/" component={MainSearchPage}/>
+                <Route path="/" component={Header} />
+                <Route exact path="/movies" component={MovieList}/>
+                <Route path="/movies/:id" component={AboutMovie}/>
                 <Route path="/popularmovies" component={PopularMovies}/>
                 <Route path="/bestmovies" component={BestMovies}/>
                 <Route path="/newmoviereleases" component={NewMovieReleases}/>

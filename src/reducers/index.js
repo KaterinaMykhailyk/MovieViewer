@@ -54,6 +54,8 @@ const movies = (state = {
     }
 };
 
+
+
 const rootReducer = combineReducers({
     showedMovies,
     moviesByQuery
