@@ -20,8 +20,15 @@ const styles = {
     media: {
         height: 200,
     },
-    body: {}
+    description: {
+        height: "207px",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        width: "88%",
+        textAlign: "justify"
+    }
 };
+
 const MovieItem = (props) => {
     const {classes, movie} = props;
     return <Card className={classes.card}>
@@ -33,7 +40,7 @@ const MovieItem = (props) => {
                 title="Contemplative Reptile"
             />
 
-            <CardContent>
+            <CardContent className={classes.description}>
                 <Typography gutterBottom variant="h5" component="h2">
                     {movie.title}
                 </Typography>
@@ -45,7 +52,7 @@ const MovieItem = (props) => {
 
             <Divider variant="fullWidth"/>
             <CardActions>
-                <NavLink to={`/movies/${movie.id}`} style={{ textDecoration: 'none' }}>
+                <NavLink to={`/movies/${movie.id}`} style={{textDecoration: 'none'}}>
                     <Button size="small" color="primary">
                         More Info
                     </Button>
@@ -55,6 +62,5 @@ const MovieItem = (props) => {
         </CardActionArea>
     </Card>
 };
-
 
 export default withStyles(styles)(MovieItem);

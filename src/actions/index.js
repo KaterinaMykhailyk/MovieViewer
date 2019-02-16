@@ -54,10 +54,10 @@ export const searchMoviesSuccess = (query, json) => {
     }
 };
 
-export const invalidateMovies = query => ({
+/* export const invalidateMovies = query => ({
     type: INVALIDATE_MOVIES,
     query
-});
+}); */
 
 // AC for individual movie by ID
 
