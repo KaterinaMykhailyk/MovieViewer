@@ -13,12 +13,11 @@ import {NavLink} from 'react-router-dom'
 const styles = {
     card: {
         maxWidth: 400,
-        paddingTop: 10,
         margin: 10,
 
     },
     media: {
-        height: 200,
+        height: 277,
     },
     description: {
         height: "207px",
@@ -36,7 +35,7 @@ const MovieItem = (props) => {
         <CardActionArea className={classes.body}>
             <CardMedia
                 className={classes.media}
-                image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                image={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                 title="Contemplative Reptile"
             />
 

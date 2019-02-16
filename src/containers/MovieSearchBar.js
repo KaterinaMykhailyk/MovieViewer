@@ -19,7 +19,7 @@ class MovieSearchBar extends Component {
     componentDidMount() {
         console.log(this.props.location.search);
         if (this.props.location.search) {
-            this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(8));
+            this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(6));
         }
     }
 

@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e293065-c18a-4a23-a223-bf04fd7cbd7c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MovieItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/MovieSearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MovieSearchBar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="MovieList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/MovieList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="187">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
                 <element signature="e#672#962#0" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="MovieItem.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MovieItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -106,6 +105,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MovieSearchBar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/MovieSearchBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#MovieSearchBar#0" />
+                <element signature="n#!!block;n#handleChange#0;n#MovieSearchBar#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -153,11 +166,11 @@
         <option value="$PROJECT_DIR$/src/components/Movie.js" />
         <option value="$PROJECT_DIR$/src/containers/MovieList.js" />
         <option value="$PROJECT_DIR$/src/containers/AboutMovie.js" />
-        <option value="$PROJECT_DIR$/src/containers/MovieSearchBar.js" />
         <option value="$PROJECT_DIR$/src/containers/MainSearchPage.js" />
         <option value="$PROJECT_DIR$/src/containers/App.js" />
         <option value="$PROJECT_DIR$/src/components/Loader.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/MovieSearchBar.js" />
         <option value="$PROJECT_DIR$/src/components/MovieItem.js" />
       </list>
     </option>
@@ -199,6 +212,12 @@
               <item name="MovieViewer" type="b2602c69:ProjectViewProjectNode" />
               <item name="MovieViewer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieViewer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieViewer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MovieViewer" type="b2602c69:ProjectViewProjectNode" />
@@ -284,7 +303,7 @@
       <workItem from="1550260296933" duration="6323000" />
       <workItem from="1550299513512" duration="1237000" />
       <workItem from="1550306071822" duration="6897000" />
-      <workItem from="1550331381940" duration="9637000" />
+      <workItem from="1550331381940" duration="11070000" />
     </task>
     <task id="LOCAL-00001" summary="feat: API request was synchronized with search field">
       <created>1549732433657</created>
@@ -314,11 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550339025479</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="style: Improved visual display of the movie cards">
+      <created>1550347561198</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1550347561198</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195143000" />
+    <option name="totallyTimeSpent" value="196576000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -331,7 +357,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49456522" visible="true" weight="0.23867229" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3278867" />
@@ -385,7 +410,8 @@
     <MESSAGE value="feat: Movie List rendering was created" />
     <MESSAGE value="feat: Loader was added" />
     <MESSAGE value="feat: Route to AboutMovie Component was created" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Route to AboutMovie Component was created" />
+    <MESSAGE value="style: Improved visual display of the movie cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: Improved visual display of the movie cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,18 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/MovieSearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#MovieSearchBar#0" />
-            <element signature="n#!!block;n#handleChange#0;n#MovieSearchBar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/MainSearchPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -759,8 +773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/MovieList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="187">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
             <element signature="e#672#962#0" />
@@ -768,10 +782,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/MovieSearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#MovieSearchBar#0" />
+            <element signature="n#!!block;n#handleChange#0;n#MovieSearchBar#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MovieItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="340">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
