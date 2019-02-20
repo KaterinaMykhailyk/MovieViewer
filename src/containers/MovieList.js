@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import MovieItem from '../components/MovieItem';
+import MovieListItem from '../components/MovieListItem';
 import Loader from '../components/Loader';
 import {connect} from 'react-redux';
 
@@ -11,7 +11,7 @@ class MovieList extends Component {
         <Fragment>
             { isFetching ? <Loader /> :
                 <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around", marginTop: "80px"}}>
-                    {movies.map((movie) => <MovieItem movie={movie} key={movie.id}/>)}
+                    {movies.map((movie) => <MovieListItem movie={movie} key={movie.id}/>)}
                 </div>
             }
         </Fragment>
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
         lastUpdated
     }
 };
-
 
 export default connect(mapStateToProps, null)(MovieList);
 

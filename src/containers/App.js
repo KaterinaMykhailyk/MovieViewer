@@ -5,7 +5,7 @@ import Header from '../containers/Header';
 import PopularMovies from '../containers/PopularMovies';
 import BestMovies from '../containers/BestMovies';
 import NewMovieReleases from '../containers/NewMovieReleases';
-import AboutMovie from "../containers/AboutMovie";
+import MoviePage from "./MoviePage";
 import MovieList from "../containers/MovieList";
 
 const theme = createMuiTheme({
@@ -40,7 +40,7 @@ class App extends Component {
             <MuiThemeProvider theme={theme}>
                 <Route path="/" component={Header} />
                 <Route exact path="/movies" component={MovieList}/>
-                <Route path="/movies/:id" component={AboutMovie}/>
+                <Route path="/movies/:id" component={MoviePage} />
                 <Route path="/popularmovies" component={PopularMovies}/>
                 <Route path="/bestmovies" component={BestMovies}/>
                 <Route path="/newmoviereleases" component={NewMovieReleases}/>

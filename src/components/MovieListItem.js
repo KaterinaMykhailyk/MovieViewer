@@ -28,7 +28,7 @@ const styles = {
     }
 };
 
-const MovieItem = (props) => {
+const MovieListItem = (props) => {
     const {classes, movie} = props;
     return <Card className={classes.card}>
 
@@ -62,4 +62,4 @@ const MovieItem = (props) => {
     </Card>
 };
 
-export default withStyles(styles)(MovieItem);
+export default withStyles(styles)(MovieListItem);

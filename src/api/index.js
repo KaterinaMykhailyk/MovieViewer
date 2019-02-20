@@ -45,7 +45,6 @@ function getMovie(id) {
             api_key: API_KEY
         }
     })
-        .then(response => console.log(response.data));
 }
 
 export {

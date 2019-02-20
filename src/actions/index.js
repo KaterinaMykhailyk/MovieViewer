@@ -76,11 +76,12 @@ export const fetchMovieRequest = id => {
     }
 };
 
-export const fetchMovieSuccess = (id, json) => {
+export const fetchMovieSuccess = (id, data) => {
+    console.log(data, "I am in fetchMovieSuccess");
     return {
         type: FETCH_MOVIE_SUCCESS,
         id,
-        movie: json.data,
+        movie: data,
         receivedAt: Date.now()
     }
 };

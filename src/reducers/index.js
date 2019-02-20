@@ -1,5 +1,11 @@
 import {combineReducers} from 'redux';
-import {INVALIDATE_MOVIES, SEARCH_MOVIES_REQUEST, SEARCH_MOVIES_SUCCESS, SHOW_MOVIES} from "../constants";
+import {
+    FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS,
+    INVALIDATE_MOVIES,
+    SEARCH_MOVIES_REQUEST,
+    SEARCH_MOVIES_SUCCESS,
+    SHOW_MOVIES
+} from "../constants";
 
 function showedMovies(state = "", action) {
     switch (action.type) {
@@ -54,11 +60,32 @@ const movies = (state = {
     }
 };
 
+const movie = (state = {isFetching: false, info: {}}, action) => {
+    switch(action.type) {
+        case FETCH_MOVIE_REQUEST:
+            return {
+                ...state,
+                isFetching: true,
+                didInvalidate: false
+            };
+        case FETCH_MOVIE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                didInvalidate: false,
+                info: action.movie.data,
+                lastUpdated: action.receivedAt
+            };
+        default:
+            return state
+    }
 
+};
 
 const rootReducer = combineReducers({
     showedMovies,
-    moviesByQuery
+    moviesByQuery,
+    movie
 });
 
 export default rootReducer;
