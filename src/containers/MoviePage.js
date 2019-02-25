@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Movie from '../components/Movie';
 import {connect} from 'react-redux';
 import {fetchMovie} from "../actions/index";
-import Backdrop from '@material-ui/core/Backdrop';
 
 class MoviePage extends Component {
 
@@ -10,15 +9,9 @@ class MoviePage extends Component {
         this.props.onFetchMovie(this.props.match.params.id);
     }
 
-    /* componentDidUpdate(prevProps) {
-        if (prevProps.movieItem !== this.props.movieItem) {
-            this.props.onFetchMovie(this.props.match.params.id);
-        }
-    } */
-
     render() {
         return (
-                <Movie movie={this.props.movieItem}/>
+                <Movie movie={this.props.movieItem} />
         )
     }
 }

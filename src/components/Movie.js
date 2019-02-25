@@ -8,6 +8,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 
 const styles = theme => ({
+    wrapper: {
+        marginTop: "60px",
+        marginLeft: "10px",
+        height: "700px",
+        left: "50%",
+        right: "50%",
+        width: "1280px",
+        backgroundRepeat: "no-repeat"
+
+    },
     background: {
         marginTop: "60px",
         marginLeft: "10px",
@@ -83,16 +93,9 @@ class Movie extends Component {
         });
     };
 
-    handleChangeIndex = index => {
-        this.setState({
-            index,
-        });
-    };
-
     render() {
         const {classes, movie} = this.props;
-        // const {index} = this.state;
-        console.log(this.props);
+
         return (
             <div style={{display: "flex", justifyContent: "center", flexDirection: "column"}}>>
                 <Paper className={classes.background} zDepth={3}

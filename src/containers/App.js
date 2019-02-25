@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
 import Header from '../containers/Header';
-import PopularMovies from '../containers/PopularMovies';
-import BestMovies from '../containers/BestMovies';
-import NewMovieReleases from '../containers/NewMovieReleases';
 import MoviePage from "./MoviePage";
 import MovieList from "../containers/MovieList";
 
@@ -38,12 +35,14 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider theme={theme}>
-                <Route path="/" component={Header} />
-                <Route exact path="/movies" component={MovieList}/>
-                <Route path="/movies/:id" component={MoviePage} />
-                <Route path="/popularmovies" component={PopularMovies}/>
-                <Route path="/bestmovies" component={BestMovies}/>
-                <Route path="/newmoviereleases" component={NewMovieReleases}/>
+                <Route path="/" component={Header}/>
+                <Switch>
+                    <Route exact path="/movies" component={MovieList}/>
+                    <Route path="/movies/popularmovies" component={MovieList}/>
+                    <Route path="/movies/bestmovies" component={MovieList}/>
+                    <Route path="/movies/upcomingreleases" component={MovieList}/>
+                    <Route path="/movies/:id" component={MoviePage}/>
+                </Switch>
             </MuiThemeProvider>
         );
     }

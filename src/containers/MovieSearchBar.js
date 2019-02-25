@@ -9,16 +9,17 @@ class MovieSearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchFieldValue: ""
+            searchFieldValue: "",
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
     componentDidMount() {
         if (this.props.location.search) {
-            this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(6));
+            this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(6))
         }
     }
 
@@ -26,6 +27,7 @@ class MovieSearchBar extends Component {
         if (this.props.location.search && this.props.location.search !== prevProps.location.search) {
             this.props.onFetchMoviesIfNeeded(this.props.location.search.slice(6));
         }
+
     }
 
     handleChange(e) {
@@ -36,17 +38,29 @@ class MovieSearchBar extends Component {
 
     handleClick() {
         const {history} = this.props;
-        const location = {
-            pathname: '/movies',
-            search: `?name=${this.state.searchFieldValue}`
-        };
-
+        let location;
+        if (this.state.searchFieldValue) {
+            location = {
+                pathname: '/movies',
+                search: `?name=${this.state.searchFieldValue}`
+            }
+        } else {
+            location = {
+                pathname: '/',
+            };
+        }
         history.push(location);
+    };
+
+    handleKeyPress(e) {
+        if (e.key === 'Enter') {
+            this.handleClick();
+        }
     }
 
     render() {
         return (
-            <Search onChange={this.handleChange} onClick={this.handleClick} value={this.state.searchFieldValue}/>
+            <Search onChange={this.handleChange} onClick={this.handleClick} value={this.state.searchFieldValue} onKeyPress={this.handleKeyPress}/>
         )
     }
 }

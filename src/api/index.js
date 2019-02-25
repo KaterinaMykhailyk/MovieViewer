@@ -3,6 +3,15 @@ import axios from "axios";
 const API_PREFIX = 'https://api.themoviedb.org/3/';
 const API_KEY = 'b530e02db387c431c0d7d3fa6dfe7328';
 
+const search = (query) => {
+    switch (query) {
+        case "popularmovies": return fetchPopularMovies();
+        case "bestmovies": return fetchBestMovies();
+        case "upcomingreleases": return fetchUpcomingReleases();
+        default: return searchMovies(query);
+    }
+};
+
 function searchMovies(query) {
     return axios.get(`${API_PREFIX}search/movie`, {
         params: {
@@ -18,25 +27,23 @@ function fetchPopularMovies() {
             api_key: API_KEY,
         }
     })
-        .then(response => console.log(response.data));
+
 }
 
-function fetchTopRatedMovies() {
+function fetchBestMovies() {
     return axios.get(`${API_PREFIX}movie/top_rated`, {
         params: {
             api_key: API_KEY,
         }
     })
-        .then(response => console.log(response.data));
 }
 
-function fetchNowPlayingMovies() {
-    return axios.get(`${API_PREFIX}movie/now_playing`, {
+function fetchUpcomingReleases() {
+    return axios.get(`${API_PREFIX}movie/upcoming`, {
         params: {
             api_key: API_KEY,
         }
     })
-        .then(response => console.log(response.data));
 }
 
 function getMovie(id) {
@@ -48,9 +55,6 @@ function getMovie(id) {
 }
 
 export {
-    searchMovies,
-    fetchPopularMovies,
-    fetchTopRatedMovies,
-    fetchNowPlayingMovies,
+    search,
     getMovie
 };

@@ -12,6 +12,7 @@ const Search = (props) => {
                 placeholder="Search movies"
                 onChange={props.onChange}
                 value={props.value}
+                onKeyPress={props.onKeyPress}
             />
         </Fragment>
     );
